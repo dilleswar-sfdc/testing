@@ -1,0 +1,37 @@
+<aura:component controller="TestCmpDbLogin" implements="force:hasRecordId">
+	<h1>Login</h1>
+    <aura:attribute name="email" type="String"/>
+    <aura:attribute name="pwd" type="String"/>
+      <aura:attribute name="modalOpen" type="Boolean"/>
+    <lightning:input type="email" label="Username" value="{!v.email}"/>
+    <lightning:input type="password" label="Password" value="{!v.pwd}"/>
+    <lightning:button variant="brand" label="Login" onclick="{!c.login}"/>
+    <aura:if isTrue="{!v.modalOpen}">
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large" aura:id="modal" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.close}">
+                     <lightning:icon iconName="utility:close" alternativeText="Utility close" />
+                </button>
+              
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <table class="slds-table slds-table--bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>password</th>
+            </tr>
+        </thead>
+                    <tbody>
+                		<c:TestCmpdbtable/>
+                    </tbody>
+                </table>
+            </div>
+           
+        </div>
+    </section>
+	<div class="slds-backdrop slds-backdrop_open" aura:id="modalbackdrop"></div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component controller="TestCmpDbLogin" implements="force:hasRecordId">
+    <aura:attribute name="data" type="signUp__c" default="{ 'sobjectType': 'signUp__c',
+                        'Name__c': '',
+                        'Email__c': '',
+                        'Passwork__c': ''
+                       }"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:iteration items="{!v.data}" var ="show">
+            <tr><td>{!show.Name__c}</td>
+            <td>{!show.Email__c}</td>
+            <td>{!show.Password__c}</td>
+        <td>  <lightning:button variant="brand" label="Edit" onclick="{!c.onEdit}"/></td>
+        <td> <lightning:button variant="destructive" label="Delete" onclick="{!c.onDelete}"/></td>
+        </tr>
+        </aura:iteration>
+</aura:component>

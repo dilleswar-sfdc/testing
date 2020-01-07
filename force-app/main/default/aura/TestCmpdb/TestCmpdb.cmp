@@ -1,0 +1,32 @@
+<aura:component controller="testCmpdb" implements="force:appHostable">
+    <aura:attribute name="data" type="signUp__c"  default="{ 'sobjectType': 'signUp__c',
+                        'Name': '',
+                        'Name__c': '',
+                        'Email__c': '',
+                        'Passwork__c': ''
+                       }"/>
+    <aura:attribute name="openModal" type="Boolean"/>
+	<h2 class="header">SignUP</h2>
+	<lightning:input name="input3" label="Name" placeholder="Enter ur Name" value="{!v.data.Name__c}"/>
+	<lightning:input type="email" name="email3" placeholder="youraddress@company.com" label="Email" value="{!v.data.Email__c}"/>
+    <lightning:input type="password" label="Password field with placeholder" name="input3" placeholder="Enter Password" value="{!v.data.Password__c}"/>
+    <lightning:button variant="brand" label="SignUp" title="Brand action" onclick="{!c.signUP}" />
+    <br/><h1>If you already sign up......just login</h1> <a onclick="{!c.login}">click here to Login</a>
+    <aura:if isTrue="{!v.openModal}">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aura:id="modal" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.close}">
+                        <lightning:icon iconName="utility:close" alternativeText="Utility close" />
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Modal Header</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <c:TestCmpdbLogin/>
+                </div>
+               
+            </div>
+        </section>
+<div class="slds-backdrop slds-backdrop_open" aura:id="modalbackdrop"></div>
+    </aura:if>
+</aura:component>

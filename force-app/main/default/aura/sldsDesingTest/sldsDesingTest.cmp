@@ -1,0 +1,85 @@
+<aura:component >
+<ltng:require scripts="{!$Resource.addedJquery}" afterScriptsLoaded="{!c.loadJquery}" />
+    <ul class="slds-accordion">
+        <li class="slds-accordion__list-item">
+            <section class="slds-accordion__section slds-is-open">
+                <div class="slds-accordion__summary">
+                    <h3 class="slds-accordion__summary-heading">
+                        <button aria-controls="accordion-details-01" aria-expanded="true" class="slds-button slds-button_reset slds-accordion__summary-action" onclick="{!c.accordionOpen}">
+                            
+                            <span class="slds-truncate" title="Accordion summary">Accordion summary</span>
+                        </button>
+                    </h3>
+                </div>
+                <div class="slds-accordion__content" id="accordion-details-01">Accordion details - A</div>
+            </section>
+        </li>
+        <li class="slds-accordion__list-item">
+            <section class="slds-accordion__section">
+                <div class="slds-accordion__summary test ">
+                    <h3 class="slds-accordion__summary-heading ">
+                        <button  onclick="{!c.accordionOpen}" aria-controls="accordion-details-02" aria-expanded="false" class="slds-button slds-button_reset slds-accordion__summary-action">
+                            
+                            <span class="slds-truncate" title="Accordion summary">Accordion summary</span>
+                        </button>
+                    </h3>
+                    <div class="slds-popover slds-popover_tooltip slds-nubbin_top  parent slds-hide" role="tooltip" id="help-x" style="position:absolute;top:100px;left:165px">
+                        <div class="slds-popover__body">The primary internal Salesforce org. Used to run our online sales business and manage accounts.</div>
+                    </div>
+                </div>
+                <div hidden="" class="slds-accordion__content" id="accordion-details-02">Accordion details - B</div>
+            </section>
+        </li>
+        <li class="slds-accordion__list-item">
+            <section class="slds-accordion__section">
+                <div class="slds-accordion__summary">
+                    <h3 class="slds-accordion__summary-heading">
+                        <button aria-controls="accordion-details-03" aria-expanded="false" class="slds-button slds-button_reset slds-accordion__summary-action">
+                            
+                            <span class="slds-truncate" title="Accordion summary">Accordion summary</span>
+                        </button>
+                    </h3>
+                </div>
+                <div hidden="" class="slds-accordion__content" id="accordion-details-03">Accordion details - C</div>
+            </section>
+        </li>
+    </ul>
+    <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+        <span class="slds-assistive-text">info</span>
+        <span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="Description of icon when needed">
+                    </span>
+        <h2>Logged in as John Smith (johnsmith@acme.com).
+            <a href="javascript:void(0);" onclick="{!c.logout}">Log out</a>
+        </h2>
+        <div class="slds-notify__close">
+            <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close">
+                
+                <span class="slds-assistive-text">Close</span>
+            </button>
+        </div>
+    </div>
+    <span class="slds-avatar slds-avatar_circle">
+        <abbr class="slds-avatar__initials slds-icon-standard-user" title="person name">New</abbr>
+    </span>
+<button class="slds-button slds-button_icon slds-button_icon-brand" title="Search">
+  
+  <span class="slds-assistive-text">Search</span>
+</button>
+<div class="slds-grid">
+  <div class="slds-col">Column 1</div>
+  <div class="slds-col">Column 2</div>
+  <div class="slds-col">Column 3</div>
+</div>
+<!-- BASIC GRID EXAMPLE -->
+<div class="slds-grid">
+  <div class="slds-col slds-size_4-of-6">Column 1</div>
+  <div class="slds-col slds-size_1-of-6">Column 2</div>
+  <div class="slds-col slds-size_1-of-6">Column 3</div>
+</div>
+<!-- RESPONSIVE GRID EXAMPLE -->
+<div class="slds-grid slds-wrap">
+  <div class="slds-col slds-size_1-of-1 slds-small-size_1-of-2 slds-medium-size_3-of-4">A</div>
+  <div class="slds-col slds-size_1-of-1 slds-small-size_1-of-2 slds-medium-size_1-of-4">B</div>
+</div>
+
+</aura:component>
